@@ -4,7 +4,7 @@
 </ion-header-bar>
 
 <ion-content class="has-header padding" has-tabs="true" on-refresh="onRefresh()">
-   <ion-refresher ng-hide="noData || incomplete" on-refresh="doRefresh()"></ion-refresher>
+   <ion-refresher ng-hide="noData || incomplete" on-refresh="doRefresh('2')"></ion-refresher>
    <div class="card" ng-repeat="item in list" >
       <div class="item item-text-wrap">
          <span>

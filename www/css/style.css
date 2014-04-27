@@ -19,3 +19,8 @@
 .item-text-wrap {
     overflow: auto;
 }
+
+.ion-checkmark-circled.icon-actions.margin
+{
+	margin-right: 35px;
+}
