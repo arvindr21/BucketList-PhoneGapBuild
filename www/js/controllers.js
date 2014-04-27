@@ -87,6 +87,11 @@ angular.module('bucketList.controllers', ['bucketList.services'])
             {
                 $scope.noData = true;
             }
+            else
+            {
+                $scope.noData = false;
+            }
+
             $ionicModal.fromTemplateUrl('templates/newItem.html', function (modal) {
                 $scope.newTemplate = modal;
             });
@@ -109,6 +114,7 @@ angular.module('bucketList.controllers', ['bucketList.services'])
             isCompleted: true
         }, $rootScope.getToken())
             .success(function (data, status, headers, config) {
+                $rootScope.hide();
                 $rootScope.doRefresh(1);
             }).error(function (data, status, headers, config) {
                 $rootScope.hide();
@@ -122,6 +128,7 @@ angular.module('bucketList.controllers', ['bucketList.services'])
         $rootScope.show("Please wait... Deleting from List");
         API.deleteItem(id, $rootScope.getToken())
             .success(function (data, status, headers, config) {
+                $rootScope.hide();
                 $rootScope.doRefresh(1);
             }).error(function (data, status, headers, config) {
                 $rootScope.hide();
@@ -144,10 +151,18 @@ angular.module('bucketList.controllers', ['bucketList.services'])
                 {
                     $scope.incomplete = true;
                 }
+                else
+                {
+                    $scope.incomplete= false;
+                }
                 
                 if(data.length == 0)
                 {
                     $scope.noData = true;
+                }
+                else
+                {
+                    $scope.noData = false;
                 }
             }).error(function (data, status, headers, config) {
                 $rootScope.notify("Oops something went wrong!! Please try again later");
@@ -160,6 +175,7 @@ angular.module('bucketList.controllers', ['bucketList.services'])
             $rootScope.show("Please wait... Deleting from List");
             API.deleteItem(id, $rootScope.getToken())
                 .success(function (data, status, headers, config) {
+                    $rootScope.hide();
                     $rootScope.doRefresh(2);
                 }).error(function (data, status, headers, config) {
                     $rootScope.hide();
