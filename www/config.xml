@@ -1,12 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.BucketList.app" 
-    version="1.0.0" 
-    xmlns="http://www.w3.org/ns/widgets" 
-    xmlns:gap="http://phonegap.com/ns/1.0">
-
+<widget id="com.BucketList.app" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>BucketList App</name>
     <description>
-        Ionic Restify & MongoDB - An End to End Hybrid App
+        Ionic Restify and MongoDB - An End to End Hybrid App
     </description>
     <author email="admin@thejackalofjavascript.com" href="http://thejackalofjavascript.com/">
       Arvind Ravulvaru
